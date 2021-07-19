@@ -1,3 +1,22 @@
+:root{
+    --drkBG: #121212;
+    --drkTXT: #d4ce1c;
+    --border: #ea3f0b;
+}
+
+*{
+    background-color: var(--drkBG);
+    color: var(--drkTXT);
+}
+
+#page{
+    /* not my initial plan but saw this in the solved HW.
+    I like that it doesn't rely on setting padding and keeps the page at a percentage, regardless of screen-width, making it more mobile friendly*/
+    max-width: 88%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 header{
     display: flex;
     justify-content: space-between;
@@ -6,7 +25,13 @@ header{
 
 h1{
     margin: 0;
-    
+   
+}
+
+h3{
+    font-weight: bold;
+    font-size: large;
+    margin: 0 0 10px 0;
 }
 
 .container{
@@ -17,12 +42,23 @@ h1{
 }
 
 .box{
-    border: 5px solid black;
+    border: 5px solid var(--border);
     background-color: var(--primary);
     display: flex;
     align-items: flex-end;
     flex: 0 0 25%;
     margin: 3px;
+    height: 300px;
+    width: 300px;
+    border-radius: 10px;
+    background-size: cover;
+    text-decoration: none;
+    font-family: 'Open Sans Condensed', sans-serif;
+}
+
+.box:hover > .info{
+    box-shadow: 5px 5px 5px ;
+    
 }
 
 #work{
@@ -38,3 +74,26 @@ h1{
 .container {
     flex: 0 0 80%;
   }
+
+.comic-call{
+    background-image: url(Spidey.jpg);
+    font-family: 'Bangers', cursive;
+}
+
+
+
+.info{
+    background-color: var(--drkBG);
+    margin: 0 0 20px 0;
+    border: 3px solid var(--border);
+    border-style: solid solid solid none;
+    font-size: small;
+    padding: 10px;
+        
+    
+}
+
+.box:first-child{
+    min-height: 375px;
+    flex-basis: 77%; /*I just kept changing this by a percentage until it lined up with the rest of my work. Not sure if there was a better/easier way.*/
+}
