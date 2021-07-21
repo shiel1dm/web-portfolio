@@ -1,37 +1,99 @@
 :root{
-    --drkBG: #121212;
-    --drkTXT: #d4ce1c;
-    --border: #ea3f0b;
+    --drkBG: #fcde67;
+    --drkTXT: #030e12;
+    --border: #5bccf6;
 }
 
 *{
-    background-color: var(--drkBG);
+    
     color: var(--drkTXT);
+    margin: 0;
+}
+
+body{
+    background-color: var(--drkBG)
+}
+
+#topper{
+    margin:0;
 }
 
 #page{
     /* not my initial plan but saw this in the solved HW.
     I like that it doesn't rely on setting padding and keeps the page at a percentage, regardless of screen-width, making it more mobile friendly*/
-    max-width: 88%;
+    max-width: 90%;
     margin-left: auto;
     margin-right: auto;
+    font-size: 125%;
 }
 
-header{
+#about{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: stretch;
+    margin: 20px 0 25px 0;
+}
+
+#head{
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
+    background-color: var(--border);
+    height: 80px;
+    font-size: 150%;
+    color: white;
+}
+
+.navbar, a{
+    background-color: inherit;
+    text-decoration: none;
+    margin: 3px;
+    
+}
+
+.navbar > a:hover{
+    color: var(--drkBG);
+}
+
+.test{
+    display: inherit;
+    flex: 0 0 80%;
+    flex-direction: column;
 }
 
 h1{
     margin: 0;
+    background-color: inherit;
+    
    
+}
+
+h2{
+    font-size: 250%;
+    border-right: 3px solid var(--border);
+    min-width: 15%;
+    color: var(--drkTXT);
 }
 
 h3{
     font-weight: bold;
     font-size: large;
     margin: 0 0 10px 0;
+}
+
+#banner{
+    background-image: url(banner_img.jpg);
+    height: 450px;
+    background-size: cover;
+    display: block;
+}
+
+.picture{
+    border-radius: 50%;
+    width: 300px;
+    height: auto;
+    
 }
 
 .container{
@@ -73,27 +135,97 @@ h3{
 
 .container {
     flex: 0 0 80%;
-  }
+}
 
 .comic-call{
     background-image: url(Spidey.jpg);
     font-family: 'Bangers', cursive;
 }
 
-
+.pass-gen{
+    background-image: url(lock.png);
+    background-color: white;
+}
 
 .info{
-    background-color: var(--drkBG);
+    background-color: var(--border);
     margin: 0 0 20px 0;
     border: 3px solid var(--border);
     border-style: solid solid solid none;
     font-size: small;
     padding: 10px;
-        
-    
+    font-size: 100%;
+          
 }
 
 .box:first-child{
     min-height: 375px;
     flex-basis: 77%; /*I just kept changing this by a percentage until it lined up with the rest of my work. Not sure if there was a better/easier way.*/
 }
+
+.contact{
+    display: block;
+    text-align: center;
+    margin: 20px 0 15px 0;
+    
+}
+
+.contact > h2{
+    border-right: none;
+    border-bottom: 2px dashed white;
+}
+
+address{
+    padding-top: 15px;
+    font-size: 110%;
+}
+
+
+@media screen and (max-width: 980px) {
+    .head {
+      padding: 0 0 10px 0;
+      justify-content: center;
+      text-align: center;
+    }
+  
+    .head h1 {
+      width: 100%;
+      padding: 5px;
+      margin-bottom: 10px;
+      font-size: 10vw;
+    }
+  
+    .head nav {
+      justify-content: center;
+    }
+  
+    .container > h2,
+    .container > div {
+      flex: 0 0 100%;
+    }
+  
+    .container > h2 {
+      border-right: none;
+      border-bottom: 4px solid var(--primary);
+      margin-bottom: 20px;
+      padding-bottom: 10px;
+      text-align: left;
+      font-size: 7vw;
+    }
+  }
+  
+  @media screen and (max-width: 768px) {
+    .flex-item,
+    .flex-item:first-child {
+      flex-basis: 100%;
+    }
+  
+    .flex-item:first-child {
+      min-height: 150px;
+    }
+  
+    #banner {
+      justify-content: center;
+      text-align: center;
+    }
+  }
