@@ -14,59 +14,10 @@ body{
     background-color: var(--drkBG)
 }
 
-#topper{
-    margin:0;
-}
-
-#page{
-    /* not my initial plan but saw this in the solved HW.
-    I like that it doesn't rely on setting padding and keeps the page at a percentage, regardless of screen-width, making it more mobile friendly*/
-    max-width: 90%;
-    margin-left: auto;
-    margin-right: auto;
-    font-size: 125%;
-}
-
-#about{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: stretch;
-    margin: 20px 0 25px 0;
-}
-
-#head{
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
-    background-color: var(--border);
-    height: 80px;
-    font-size: 150%;
-    color: white;
-}
-
-.navbar, a{
-    background-color: inherit;
-    text-decoration: none;
-    margin: 3px;
-    
-}
-
-.navbar > a:hover{
-    color: var(--drkBG);
-}
-
-.test{
-    display: inherit;
-    flex: 0 0 80%;
-    flex-direction: column;
-}
-
 h1{
     margin: 0;
     background-color: inherit;
-    
-   
+    padding: 0 0 10px 7px;   
 }
 
 h2{
@@ -82,11 +33,28 @@ h3{
     margin: 0 0 10px 0;
 }
 
+p{
+    line-height: 1.5;
+    text-indent: 40px;
+}
+
+a{
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+    font-style: normal;
+    text-decoration: underline;
+}
+
+#topper{
+    margin:0;
+}
+
 #banner{
     background-image: url(banner_img.jpg);
     height: 450px;
     background-size: cover;
     display: block;
+    
 }
 
 .picture{
@@ -96,7 +64,71 @@ h3{
     
 }
 
+.navbar, a{
+    background-color: inherit;
+    margin: 3px;
+}
+
+.navbar > a:hover{
+    color: var(--drkBG);
+}
+
+#head{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    background-color: var(--border);
+    height: 80px;
+    font-size: 150%;
+    color: white;
+    padding-right: 7px;
+}
+
+#page{
+    /* not my initial plan but saw this in the solved HW.
+    I like that it doesn't rely on setting padding and keeps the page at a percentage, regardless of screen-width, making it more mobile friendly imo*/
+    max-width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 150%;
+    margin-top: 50px;
+}
+
+
+#about{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: stretch;
+    margin: 20px 0 25px 0;
+}
+
+.bio{
+    display: inherit;
+    flex: 0 0 80%;
+    flex-direction: column;
+}
+
+address > a{
+    text-decoration: underline;
+}
+
+address > a:hover{
+    color: white;
+}
+
+#work{
+    margin: 25px 0;
+    padding: 10px 0;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: stretch;
+    justify-content: space-between;
+}
+
 .container{
+    flex: 0 0 80%;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -119,32 +151,8 @@ h3{
 }
 
 .box:hover > .info{
-    box-shadow: 5px 5px 5px ;
+    box-shadow: 10px 5px 5px ;
     
-}
-
-#work{
-    margin: 25px 0;
-    padding: 10px 0;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    align-items: stretch;
-    justify-content: space-between;
-}
-
-.container {
-    flex: 0 0 80%;
-}
-
-.comic-call{
-    background-image: url(Spidey.jpg);
-    font-family: 'Bangers', cursive;
-}
-
-.pass-gen{
-    background-image: url(lock.png);
-    background-color: white;
 }
 
 .info{
@@ -163,14 +171,24 @@ h3{
     flex-basis: 77%; /*I just kept changing this by a percentage until it lined up with the rest of my work. Not sure if there was a better/easier way.*/
 }
 
-.contact{
+.comic-call{
+    background-image: url(Spidey.jpg);
+    font-family: 'Bangers', cursive;
+}
+
+.pass-gen{
+    background-image: url(lock.png);
+    background-color: white;
+}
+
+#contact{
     display: block;
     text-align: center;
-    margin: 20px 0 15px 0;
+    margin: 100px 0 15px 0;
     
 }
 
-.contact > h2{
+#contact > h2{
     border-right: none;
     border-bottom: 2px dashed white;
 }
@@ -180,52 +198,40 @@ address{
     font-size: 110%;
 }
 
+@media screen and (max-width: 1600px) {
+    #about{
+        flex-direction: column;
+        align-items: center;
+    }    
+    #about > h2{
+        border-right: 0;
+        border-bottom: 5px solid var(--border);
+        margin-bottom: 10px;
+    }
+}
 
-@media screen and (max-width: 980px) {
-    .head {
-      padding: 0 0 10px 0;
-      justify-content: center;
-      text-align: center;
+@media screen and (max-width: 1280px) {
+    #about, #work{
+        flex-direction: column;
+        align-items: center;
     }
-  
-    .head h1 {
-      width: 100%;
-      padding: 5px;
-      margin-bottom: 10px;
-      font-size: 10vw;
+    h2{
+        border-right: 0;
+        border-bottom: 5px solid var(--border);
+        margin-bottom: 10px;
     }
-  
-    .head nav {
-      justify-content: center;
-    }
-  
-    .container > h2,
-    .container > div {
-      flex: 0 0 100%;
-    }
-  
-    .container > h2 {
-      border-right: none;
-      border-bottom: 4px solid var(--primary);
-      margin-bottom: 20px;
-      padding-bottom: 10px;
-      text-align: left;
-      font-size: 7vw;
-    }
+    
   }
   
-  @media screen and (max-width: 768px) {
-    .flex-item,
-    .flex-item:first-child {
-      flex-basis: 100%;
+@media screen and (max-width: 768px) {
+    #head, #about, #work{
+        flex-direction: column;
+        align-items: center;
     }
-  
-    .flex-item:first-child {
-      min-height: 150px;
+    h2{
+        border-right: 0;
+        border-bottom: 5px solid var(--border);
+        margin-bottom: 10px;
     }
-  
-    #banner {
-      justify-content: center;
-      text-align: center;
-    }
+    
   }
